@@ -30,7 +30,7 @@
     .btn.ok{background:var(--ok);color:#111}
     .btn.bad{background:var(--bad);color:#111}
     .pill{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:#1a2348;border:1px solid #283160;color:var(--muted);font-size:12px}
-    select, input[type="number"], input[type="text"]{background:#0f1630;border:1px solid #283160;color:var(--text);padding:10px;border-radius:10px;width:100%}
+    select, input[type="number"], input[type="text"]{background:#0f1630;border:1px solid #283160;color:#fff;padding:10px;border-radius:10px;width:100%}
     label{font-size:13px;color:var(--muted)}
     .qno{font-weight:700;color:var(--accent)}
     .option{border:1px solid #283160;border-radius:12px;padding:10px;display:flex;gap:10px;align-items:flex-start;background:#0f1630;cursor:pointer}
@@ -50,11 +50,15 @@
     .muted{color:var(--muted)}
     .divider{height:1px;background:#1d2542;margin:10px 0}
     details>summary{cursor:pointer}
-    .imgwrap{background:#0c1736;border:1px solid #253166;border-radius:12px;display:inline-block;max-width:100%;overflow:hidden}
-    .imgwrap img{max-width:100%;display:block}
+
+    /* Ảnh minh hoạ hiển thị rõ + fallback */
+    .imgwrap{background:#0c1736;border:1px solid #253166;border-radius:12px;display:flex;align-items:center;justify-content:center;min-height:180px;max-width:100%;overflow:hidden}
+    .imgwrap img{max-width:100%;height:auto;display:block}
+    .imgcap{margin-top:6px;font-size:12px;color:var(--muted)}
+
     .drop{border:2px dashed #2f3a6e;border-radius:12px;padding:16px;text-align:center;color:var(--muted)}
 
-    /* Light theme component tweaks */
+    /* Light theme tweaks */
     body.light .card{border-color:#e4e8ff; box-shadow:0 8px 24px rgba(17,24,39,.06)}
     body.light .btn{background:#eef1ff;border-color:#d5dbff;color:#0b1020}
     body.light .btn.ghost{background:transparent;border-color:#d5dbff;color:#0b1020}
@@ -72,24 +76,24 @@
 <body class="dark">
   <div class="container">
     <header>
-      <h1>161seconds Platform · Ôn đề GPLX</h1>
+      <h1>Ôn đề GPLX</h1>
       <div class="row">
         <button class="btn ghost" id="btnReset">Xoá tiến độ</button>
         <a class="btn" href="https://pages.github.com/" target="_blank" rel="noopener">Hướng dẫn GitHub Pages</a>
-        <button class="btn warn" id="btnTheme">☀️</button>
+        <button class="btn warn" id="btnTheme">☀️ Sáng</button>
       </div>
     </header>
 
-    <!-- ===== HOME (giống style site mẫu) ===== -->
+    <!-- ===== HOME ===== -->
     <section class="card" id="homeView">
       <div class="row" style="justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap">
         <div style="flex:1;min-width:260px">
-          <div class="pill">Học Bằng Lái · TheoryPractice</div>
+          <div class="pill">Theory · Practice · Exam</div>
           <h2 style="margin:10px 0 6px">Web ôn tập lý thuyết GPLX</h2>
           <p class="muted">Câu hỏi đa dạng · Ngân hàng đề lớn · Có lời giải chi tiết</p>
           <div class="divider"></div>
           <label>Nhập tên của bạn</label>
-          <input id="inpName" type="text" placeholder="Ví dụ: Quốc Bảo" />
+          <input id="inpName" type="text" placeholder="Ví dụ: Quốc Anh" />
           <div class="row" style="margin-top:10px">
             <button class="btn primary" id="btnGoStart">Bắt đầu ôn tập</button>
           </div>
@@ -100,7 +104,7 @@
       </div>
     </section>
 
-    <!-- ===== CONFIG VIEW ===== -->
+    <!-- ===== CONFIG ===== -->
     <section class="card" id="configView" style="display:none">
       <h3 style="margin-top:0">Chọn hạng & cấu hình</h3>
       <div class="row">
@@ -115,11 +119,11 @@
         </div>
         <div style="width:140px">
           <label>Số câu/đề</label>
-          <input type="number" id="numCau" min="5" max="60" value="25" />
+          <input type="number" id="numCau" min="5" max="60" value="35" />
         </div>
         <div style="width:140px">
           <label>Thời gian (phút)</label>
-          <input type="number" id="numTime" min="5" max="60" value="19" />
+          <input type="number" id="numTime" min="5" max="60" value="22" />
         </div>
       </div>
       <div class="row" style="margin-top:10px">
@@ -133,14 +137,13 @@
       <p class="muted">Định dạng JSON: [{"id":1,"text":"...","answers":[{"key":"A","text":"...","correct":true}],"liệt":true,"image":"signs/cam_vuot.png","chapter":"Biển báo","hang":["ALL","B1B2"]}, ...]</p>
     </section>
 
-    <!-- ===== EXAM VIEW ===== -->
+    <!-- ===== EXAM ===== -->
     <section class="grid" id="examView" style="display:none">
       <section class="card">
         <h3 style="margin-top:0">Bài thi</h3>
         <div class="meta">
           <span class="pill">Thí sinh: <b id="metaUser">-</b></span>
           <span class="pill">Câu: <b id="metaIdx">-</b>/<b id="metaTotal">-</b></span>
-          <span class="pill">Điểm: <b id="metaScore">0</b></span>
           <span class="pill">Thời gian: <b id="metaTime">--:--</b></span>
           <span class="pill" id="tagLiet" title="Câu điểm liệt" style="display:none">Câu liệt</span>
         </div>
@@ -167,7 +170,7 @@
       </section>
     </section>
 
-    <!-- ===== REVIEW VIEW ===== -->
+    <!-- ===== REVIEW ===== -->
     <section class="card" id="reviewCard" style="margin-top:16px;display:none"></section>
   </div>
 
@@ -177,7 +180,7 @@
     function applyTheme(){
       document.body.className = theme;
       const b = document.getElementById('btnTheme');
-      if(b){ b.textContent = theme==='dark' ? '☀️' : '🌙'; }
+      if(b){ b.textContent = theme==='dark' ? '☀️ Sáng' : '🌙 Tối'; }
     }
     function toggleTheme(){ theme = theme==='dark' ? 'light' : 'dark'; localStorage.setItem('THEME', theme); applyTheme(); }
     applyTheme();
@@ -195,82 +198,57 @@
       .then(r => r.json())
       .then(data => {
         if (Array.isArray(data)) {
-          if (data[0]?.questions) {
-            loadedQuestions = data.flatMap(p => p.questions);
-          } else {
-            loadedQuestions = data;
-          }
+          loadedQuestions = data[0]?.questions ? data.flatMap(p => p.questions) : data;
           console.log('Đã load', loadedQuestions.length, 'câu hỏi từ questions.json');
         }
       })
       .catch(err => console.warn('Không load được questions.json:', err));
 
-    // ================== DỮ LIỆU MẪU (5 câu) ==================
+    // ===== SAMPLE fallback =====
     const sampleQuestions = [
-      { id:1, text:"Hành vi nào sau đây bị nghiêm cấm khi tham gia giao thông?", answers:[
-        {key:'A', text:'Đua xe, lạng lách, đánh võng', correct:true},
-        {key:'B', text:'Đi đúng tốc độ quy định', correct:false},
-        {key:'C', text:'Nhường đường xe ưu tiên', correct:false},
-        {key:'D', text:'Đội mũ bảo hiểm đạt chuẩn', correct:false},
-      ], liet:true, image:"", chapter:"Quy tắc", hang:["ALL","A1","A2","B1B2"] },
-      { id:2, text:"Trong khu vực đông dân cư, ô tô con chạy tối đa bao nhiêu (đường có dải phân cách)?", answers:[
-        {key:'A', text:'40 km/h', correct:false},
-        {key:'B', text:'50 km/h', correct:true},
-        {key:'C', text:'60 km/h', correct:false},
-        {key:'D', text:'70 km/h', correct:false},
-      ], liet:false, image:"", chapter:"Tốc độ", hang:["ALL","B1B2"] },
-      { id:3, text:"Tại nơi giao nhau không có biển báo, xe nào đi trước?", answers:[
-        {key:'A', text:'Xe bên trái', correct:false},
-        {key:'B', text:'Xe bên phải', correct:true},
-        {key:'C', text:'Xe chạy nhanh hơn', correct:false},
-        {key:'D', text:'Xe bấm còi trước', correct:false},
-      ], liet:true, image:"", chapter:"Sa hình", hang:["ALL","A1","A2","B1B2"] },
-      { id:4, text:"Biển nào là biển cấm vượt?", answers:[
+      { id:1, text:"Biển nào là biển cấm vượt?", answers:[
         {key:'A', text:'Biển tròn viền đỏ, nền trắng, hình ô tô màu đen', correct:true},
         {key:'B', text:'Biển tam giác nền vàng', correct:false},
         {key:'C', text:'Biển vuông nền xanh', correct:false},
         {key:'D', text:'Biển STOP bát giác', correct:false},
-      ], liet:false, image:"signs/cam_vuot.png", chapter:"Biển báo", hang:["ALL","B1B2"] },
-      { id:5, text:"Khi xe ưu tiên đang phát tín hiệu làm nhiệm vụ, người lái xe phải làm gì?", answers:[
+      ], liet:false, image:"signs/cam_vuot_1.png", chapter:"Biển báo", hang:["ALL","B1B2"] },
+      { id:2, text:"Khi xe ưu tiên đang phát tín hiệu làm nhiệm vụ, người lái xe phải làm gì?", answers:[
         {key:'A', text:'Nhường đường ngay', correct:true},
         {key:'B', text:'Đi tiếp vì đèn xanh', correct:false},
         {key:'C', text:'Tăng tốc vượt', correct:false},
         {key:'D', text:'Bấm còi xin đường', correct:false},
-      ], liet:true, image:"", chapter:"Quy tắc", hang:["ALL","A1","A2","B1B2"] },
+      ], liet:true, image:"signs/sa_hinh_1.png", chapter:"Sa hình", hang:["ALL","A1","A2","B1B2"] },
     ];
 
-    // ================== STATE ==================
+    // ===== STATE =====
     const state = {
       questions: [...sampleQuestions],
       current: 0,
-      picked: {}, // id -> 'A'|'B'|...
+      picked: {},
       marked: new Set(),
       startedAt: null,
       deadline: null,
       timer: null,
-      mode: 'idle', // idle|exam|practice|review
-      config: {hang:'ALL', count:25, minutes:19},
+      mode: 'idle',
+      config: {hang:'ALL', count:35, minutes:22},
     }
 
-    // ================== STORAGE ==================
+    // ===== STORAGE =====
     const KEY = 'gplx600_state_v1';
-    function save(){ localStorage.setItem(KEY, JSON.stringify({
-      picked: state.picked, marked:[...state.marked], config:state.config
-    })); }
+    function save(){ localStorage.setItem(KEY, JSON.stringify({ picked: state.picked, marked:[...state.marked], config:state.config })); }
     function load(){ try{ const d = JSON.parse(localStorage.getItem(KEY)||'{}');
       if(d.picked) state.picked = d.picked; if(d.marked) state.marked = new Set(d.marked); if(d.config) state.config = d.config;
       $('#selHang').value = state.config.hang; $('#numCau').value = state.config.count; $('#numTime').value = state.config.minutes;
     }catch(e){}
     }
 
-    // ================== UTILS ==================
+    // ===== UTILS =====
     const fmtTime = ms=>{ const s=Math.max(0,Math.floor(ms/1000)); const m=Math.floor(s/60); const ss=String(s%60).padStart(2,'0'); return `${m}:${ss}` };
     const shuffle = arr=>arr.map(v=>[Math.random(),v]).sort((a,b)=>a[0]-b[0]).map(x=>x[1]);
 
-    // ================== RENDER ==================
+    // ===== RENDER =====
     function renderList(){
-      const wrap = $('#listNums');
-      wrap.innerHTML='';
+      const wrap = $('#listNums'); wrap.innerHTML='';
       state.questions.forEach((q,idx)=>{
         const d = document.createElement('div');
         d.className='num'+(state.marked.has(q.id)?' mark':'');
@@ -278,7 +256,7 @@
         if(state.picked[q.id]) d.style.background = '#0f2a2a';
         d.onclick=()=>{ state.current=idx; renderQuestion(); };
         wrap.appendChild(d);
-      })
+      });
     }
 
     function renderQuestion(){
@@ -290,7 +268,7 @@
 
       const area = $('#questionArea');
       const picked = state.picked[q.id] || null;
-      const img = q.image ? `<div class="imgwrap"><img src="${q.image}" alt="minh hoạ"/></div>`:'';
+      const img = q.image ? `<div class="imgwrap"><img src="${q.image}" alt="minh hoạ" onerror="this.style.display='none'; this.parentElement.insertAdjacentHTML('beforeend','<div class=\'muted\'>Không có hình hoặc sai đường dẫn: ${q.image}</div>');"/></div><div class="imgcap">Ảnh: ${q.image}</div>`:'';
       const html = `
         <div class="row" style="justify-content:space-between;align-items:center">
           <div class="tag">Chương: ${q.chapter||'-'}</div>
@@ -300,9 +278,7 @@
         ${img}
         <div style="display:grid;gap:10px;margin-top:10px">
           ${q.answers.map(a=>{
-            const cls = (state.mode==='review')
-              ? (a.correct? ' option correct' : (picked===a.key? ' option wrong':''))
-              : ' option';
+            const cls = (state.mode==='review') ? (a.correct? ' option correct' : (picked===a.key? ' option wrong':'')) : ' option';
             const checked = picked===a.key ? 'checked' : '';
             return `<label class="${cls}"><input type="radio" name="opt" value="${a.key}" ${checked} ${state.mode==='review'?'disabled':''}/> <b>${a.key}.</b> <div>${a.text}</div></label>`
           }).join('')}
@@ -310,22 +286,13 @@
       `;
       area.innerHTML = html;
 
-      $$('#questionArea input[name="opt"]').forEach(i=>{
-        i.onchange = ()=>{ state.picked[q.id] = i.value; save(); renderList(); };
-      });
+      $$('#questionArea input[name="opt"]').forEach(i=>{ i.onchange = ()=>{ state.picked[q.id] = i.value; save(); renderList(); }; });
     }
 
-    function renderTimer(){
-      if(state.mode!=='exam') return;
-      const remain = state.deadline - Date.now();
-      $('#metaTime').textContent = fmtTime(remain);
-      if(remain<=0){ submit(); }
-    }
+    function renderTimer(){ if(state.mode!=='exam') return; const remain = state.deadline - Date.now(); $('#metaTime').textContent = fmtTime(remain); if(remain<=0){ submit(); } }
 
     function showReview(result){
-      const {score, total, wrong, lietSai} = result;
-      const wrap = $('#reviewCard');
-      wrap.style.display='block';
+      const {score, total, wrong, lietSai} = result; const wrap = $('#reviewCard'); wrap.style.display='block';
       wrap.innerHTML = `
         <h3 style="margin-top:0">Kết quả</h3>
         <p>Điểm: <b class="success">${score}/${total}</b> | Sai: <b class="danger">${wrong.length}</b> ${lietSai? '| <b class="danger">SAI CÂU LIỆT → TRƯỢT</b>':''}</p>
@@ -340,75 +307,43 @@
           <ol id="wrongList"></ol>
         </details>
       `;
-      const list = $('#wrongList');
-      list.innerHTML='';
-      wrong.forEach(idx=>{
-        const q = state.questions[idx];
-        const li = document.createElement('li');
-        const correct = q.answers.find(a=>a.correct)?.key;
-        const picked = state.picked[q.id]||'-';
-        li.innerHTML = `<div><b>${q.text}</b><br><span class="muted">Chọn: ${picked} • Đúng: ${correct} ${q.liet? ' • <span class="danger">(Câu liệt)</span>':''}</span></div>`;
-        list.appendChild(li);
-      });
-
-      $('#btnRedoWrong').onclick = ()=>{
-        if(wrong.length===0) return;
-        state.questions = wrong.map(i=>state.questions[i]);
-        state.current = 0; state.mode='practice';
-        renderList(); renderQuestion();
-        wrap.style.display='none';
-      }
+      const list = $('#wrongList'); list.innerHTML='';
+      wrong.forEach(idx=>{ const q = state.questions[idx]; const li = document.createElement('li'); const correct = q.answers.find(a=>a.correct)?.key; const picked = state.picked[q.id]||'-'; li.innerHTML = `<div><b>${q.text}</b><br><span class="muted">Chọn: ${picked} • Đúng: ${correct} ${q.liet? ' • <span class=\'danger\'>(Câu liệt)</span>':''}</span></div>`; list.appendChild(li); });
+      $('#btnRedoWrong').onclick = ()=>{ if(wrong.length===0) return; state.questions = wrong.map(i=>state.questions[i]); state.current = 0; state.mode='practice'; renderList(); renderQuestion(); wrap.style.display='none'; }
       $('#btnCloseReview').onclick = ()=>{ wrap.style.display='none'; };
       $('#btnBackHome').onclick = ()=>{ show('home'); };
     }
 
     function submit(){
-      // chấm điểm
       let score=0, lietSai=false; const wrong=[];
-      state.questions.forEach((q,idx)=>{
-        const picked = state.picked[q.id];
-        const correct = q.answers.find(a=>a.correct)?.key;
-        if(picked===correct) score++; else wrong.push(idx);
-        if(q.liet && picked!==correct) lietSai=true;
-      });
-      state.mode='review';
-      clearInterval(state.timer); state.timer=null; $('#metaTime').textContent='--:--';
-      renderQuestion(); showReview({score, total:state.questions.length, wrong, lietSai});
+      state.questions.forEach((q,idx)=>{ const picked = state.picked[q.id]; const correct = q.answers.find(a=>a.correct)?.key; if(picked===correct) score++; else wrong.push(idx); if(q.liet && picked!==correct) lietSai=true; });
+      state.mode='review'; clearInterval(state.timer); state.timer=null; $('#metaTime').textContent='--:--'; renderQuestion(); showReview({score, total:state.questions.length, wrong, lietSai});
     }
 
-    // ================== KHỞI TẠO & SỰ KIỆN ==================
+    // ===== INIT & EVENTS =====
     load();
     const savedName = localStorage.getItem(userKey)||''; if(savedName){ $('#inpName').value=savedName; }
     document.getElementById('btnTheme').onclick = toggleTheme;
-
-    // chuyển view ban đầu
     show('home');
 
     $('#btnStart').onclick = ()=>{
       const hang = $('#selHang').value; const count = +$('#numCau').value; const minutes= +$('#numTime').value;
       state.config = {hang, count, minutes}; save();
-      const pool = (loadedQuestions.length? loadedQuestions: sampleQuestions)
-        .filter(q=>q.hang?.includes('ALL') || q.hang?.includes(hang));
+      const pool = (loadedQuestions.length? loadedQuestions: sampleQuestions).filter(q=>q.hang?.includes('ALL') || q.hang?.includes(hang));
       state.questions = shuffle(pool).slice(0, Math.min(count, pool.length));
       state.current = 0; state.picked={}; state.marked.clear();
       state.mode='exam'; state.startedAt=Date.now(); state.deadline= Date.now()+minutes*60*1000;
       if(state.timer) clearInterval(state.timer); state.timer=setInterval(renderTimer, 500);
-      renderList(); renderQuestion(); renderTimer();
-      $('#reviewCard').style.display='none';
-      show('exam');
+      renderList(); renderQuestion(); renderTimer(); $('#reviewCard').style.display='none'; show('exam');
     }
 
     $('#btnPractice').onclick = ()=>{
       const hang = $('#selHang').value; state.config.hang = hang; save();
-      const pool = (loadedQuestions.length? loadedQuestions: sampleQuestions)
-        .filter(q=>q.hang?.includes('ALL') || q.hang?.includes(hang));
+      const pool = (loadedQuestions.length? loadedQuestions: sampleQuestions).filter(q=>q.hang?.includes('ALL') || q.hang?.includes(hang));
       state.questions = shuffle(pool).slice(0, 25);
       state.current=0; state.mode='practice'; state.picked={}; state.marked.clear();
       if(state.timer) { clearInterval(state.timer); state.timer=null; }
-      $('#metaTime').textContent='--:--';
-      renderList(); renderQuestion();
-      $('#reviewCard').style.display='none';
-      show('exam');
+      $('#metaTime').textContent='--:--'; renderList(); renderQuestion(); $('#reviewCard').style.display='none'; show('exam');
     }
 
     $('#btnNext').onclick = ()=>{ if(state.current<state.questions.length-1){state.current++; renderQuestion();} };
@@ -418,27 +353,8 @@
 
     $('#btnReset').onclick = ()=>{ localStorage.removeItem(KEY); localStorage.removeItem(userKey); location.reload(); };
 
-    // Export kết quả (những câu đã chọn)
-    const btnExport = document.createElement('a'); btnExport.className='btn primary hidden'; btnExport.id='btnExport'; document.querySelector('header .row').prepend(btnExport);
-    btnExport.textContent='Xuất kết quả (.json)';
-    btnExport.onclick = (e)=>{
-      const data = { name: localStorage.getItem(userKey)||'', picked: state.picked, marked:[...state.marked], date:new Date().toISOString() };
-      const blob = new Blob([JSON.stringify(data,null,2)], {type:'application/json'});
-      const url = URL.createObjectURL(blob);
-      e.target.href = url; e.target.download = 'ket_qua_gplx.json';
-    }
-
-    // Nhập file JSON
-    function handleFiles(file){
-      if(!file) return; const reader = new FileReader();
-      reader.onload = ()=>{ try {
-        const arr = JSON.parse(reader.result);
-        if(Array.isArray(arr) && arr.length){ loadedQuestions = arr; alert('Đã nạp '+arr.length+' câu hỏi!'); }
-        else alert('File không đúng định dạng');
-      } catch(e){ alert('Không đọc được JSON: '+e.message); }
-      };
-      reader.readAsText(file);
-    }
+    // Nhập file JSON thủ công
+    function handleFiles(file){ if(!file) return; const reader = new FileReader(); reader.onload = ()=>{ try { const arr = JSON.parse(reader.result); if(Array.isArray(arr) && arr.length){ loadedQuestions = arr[0]?.questions ? arr.flatMap(p=>p.questions) : arr; alert('Đã nạp '+loadedQuestions.length+' câu hỏi!'); } else alert('File không đúng định dạng'); } catch(e){ alert('Không đọc được JSON: '+e.message); } }; reader.readAsText(file); }
     $('#btnImport').onclick = ()=> $('#fileInput').click();
     $('#fileInput').onchange = (e)=> handleFiles(e.target.files[0]);
     const drop = document.getElementById('dropZone');
