@@ -71,6 +71,14 @@
     body.light .num{background:#ffffff;border-color:#d5dbff}
     body.light .imgwrap{background:#eef1ff;border-color:#d5dbff}
     body.light .drop{border-color:#c8d0ff;color:#4b5575}
+    /* ===== SIDEBAR & PROGRESS ===== */
+    .side{position:sticky; top:16px; height:fit-content}
+    .bigtime{font-size:40px;font-weight:800;letter-spacing:1px;text-align:center;margin:4px 0}
+    .ring{width:160px;height:160px;margin:0 auto;display:block}
+    .ring text{font-size:18px;font-weight:700;fill:var(--text)}
+    .stat{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
+    .stat .box{background:#0f1630;border:1px solid #283160;border-radius:12px;padding:10px;text-align:center}
+    body.light .stat .box{background:#fff}
   </style>
 </head>
 <body class="dark">
@@ -162,16 +170,10 @@
             <button class="btn ok" id="btnSubmit">Nộp bài</button>
           </div>
         </div>
-        <div class="divider"></div>
-        <details>
-          <summary>Bảng câu hỏi</summary>
-          <div class="list" id="listNums"></div>
-        </details>
       </section>
-    </section>
-
-    <!-- ===== REVIEW ===== -->
-    <section class="card" id="reviewCard" style="margin-top:16px;display:none"></section>
+      
+      <!-- Sidebar phải -->
+      <sectionion>
   </div>
 
   <script>
