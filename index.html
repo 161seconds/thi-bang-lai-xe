@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ôn Thi GPLX – Trắc nghiệm 600 câu</title>
+  <!-- Giữ nguyên phần CSS từ file gốc của bạn -->
+</head>
+<body class="dark">
+  <!-- Nội dung HTML phần body giống hệt file gốc -->
+  <!-- ... -->
+  <script>
+    // ===== THEME TOGGLE =====
+    let theme = localStorage.getItem('THEME') || 'dark';
+    function applyTheme(){
+      document.body.className = theme;
+      const b = document.getElementById('btnTheme');
+      if(b){ b.textContent = theme==='dark' ? '☀️ Sáng' : '🌙 Tối'; }
+    }
+    function toggleTheme(){ theme = theme==='dark' ? 'light' : 'dark'; localStorage.setItem('THEME', theme); applyTheme(); }
+    applyTheme();
+
+    // ===== AUTO LOAD 30 ĐỀ =====
+    let loadedQuestions = [];
+    fetch('questions.json')
+      .then(r => r.json())
+      .then(data => {
+        if (Array.isArray(data)) {
+          if (data[0]?.questions) {
+            loadedQuestions = data.flatMap(p => p.questions);
+          } else {
+            loadedQuestions = data;
+          }
+          console.log('Đã load', loadedQuestions.length, 'câu hỏi từ questions.json');
+        }
+      })
+      .catch(err => console.warn('Không load được questions.json:', err));
+
+    // ===== DỮ LIỆU MẪU =====
+    const sampleQuestions = [
+      { id:1, text:"Hành vi nào sau đây bị nghiêm cấm khi tham gia giao thông?", answers:[
+        {key:'A', text:'Đua xe, lạng lách, đánh võng', correct:true},
+        {key:'B', text:'Đi đúng tốc độ quy định', correct:false},
+        {key:'C', text:'Nhường đường xe ưu tiên', correct:false},
+        {key:'D', text:'Đội mũ bảo hiểm đạt chuẩn', correct:false},
+      ], liet:true, image:"", chapter:"Quy tắc", hang:["ALL","A1","A2","B1B2"] }
+    ];
+
+    // ===== REST OF SCRIPT (giữ nguyên từ bản gốc) =====
+  </script>
+</body>
+</html>
