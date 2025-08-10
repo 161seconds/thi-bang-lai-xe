@@ -73,7 +73,7 @@ full_html = """<!DOCTYPE html>
 <body class="dark">
   <div class="container">
     <header>
-      <h1>Bechovang Platform · Ôn đề GPLX</h1>
+      <h1>161seconds Platform · Ôn đề GPLX</h1>
       <div class="row">
         <button class="btn ghost" id="btnReset">Xoá tiến độ</button>
         <a class="btn" href="https://pages.github.com/" target="_blank" rel="noopener">Hướng dẫn GitHub Pages</a>
@@ -85,12 +85,12 @@ full_html = """<!DOCTYPE html>
     <section class="card" id="homeView">
       <div class="row" style="justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap">
         <div style="flex:1;min-width:260px">
-          <div class="pill">TechLearn · TheoryPractice</div>
+          <div class="pill">Ôn Thi GPLX · TheoryPractice</div>
           <h2 style="margin:10px 0 6px">Web ôn tập lý thuyết GPLX</h2>
           <p class="muted">Câu hỏi đa dạng · Ngân hàng đề lớn · Có lời giải chi tiết</p>
           <div class="divider"></div>
           <label>Nhập tên của bạn</label>
-          <input id="inpName" type="text" placeholder="Ví dụ: Quốc Anh" />
+          <input id="inpName" type="text" placeholder="Ví dụ: Quốc Bảo" />
           <div class="row" style="margin-top:10px">
             <button class="btn primary" id="btnGoStart">Bắt đầu ôn tập</button>
           </div>
@@ -178,7 +178,7 @@ full_html = """<!DOCTYPE html>
     function applyTheme(){
       document.body.className = theme;
       const b = document.getElementById('btnTheme');
-      if(b){ b.textContent = theme==='dark' ? '☀️ Sáng' : '🌙 Tối'; }
+      if(b){ b.textContent = theme==='dark' ? '☀️' : '🌙'; }
     }
     function toggleTheme(){ theme = theme==='dark' ? 'light' : 'dark'; localStorage.setItem('THEME', theme); applyTheme(); }
     applyTheme();
