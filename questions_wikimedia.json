@@ -1,0 +1,446 @@
+[
+  {
+    "id": 101,
+    "text": "Biển này có ý nghĩa gì?",
+    "answers": [
+      {
+        "key": "A",
+        "text": "Cấm vượt",
+        "correct": true
+      },
+      {
+        "key": "B",
+        "text": "Cấm ô tô tải",
+        "correct": false
+      },
+      {
+        "key": "C",
+        "text": "Hạn chế tốc độ 50 km/h",
+        "correct": false
+      },
+      {
+        "key": "D",
+        "text": "Hết cấm vượt",
+        "correct": false
+      }
+    ],
+    "liet": false,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Vietnam%20road%20sign%20P125%20V2.svg",
+    "chapter": "Biển báo cấm",
+    "hang": [
+      "ALL",
+      "A1",
+      "A2",
+      "B1B2"
+    ],
+    "explain": "P.125 – Cấm vượt (các xe cơ giới không được vượt).",
+    "source": "Wikimedia Commons – Vietnam road sign P125 V2.svg"
+  },
+  {
+    "id": 102,
+    "text": "Biển này báo hiệu gì?",
+    "answers": [
+      {
+        "key": "A",
+        "text": "Hết cấm vượt",
+        "correct": true
+      },
+      {
+        "key": "B",
+        "text": "Cấm vượt",
+        "correct": false
+      },
+      {
+        "key": "C",
+        "text": "Cấm dừng xe",
+        "correct": false
+      },
+      {
+        "key": "D",
+        "text": "Đường ưu tiên",
+        "correct": false
+      }
+    ],
+    "liet": false,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Vietnam%20road%20sign%20P133.svg",
+    "chapter": "Biển báo cấm",
+    "hang": [
+      "ALL",
+      "A1",
+      "A2",
+      "B1B2"
+    ],
+    "explain": "P.133 – Hết cấm vượt (kết thúc hiệu lực của biển cấm vượt).",
+    "source": "Wikimedia Commons – Vietnam road sign P133.svg"
+  },
+  {
+    "id": 103,
+    "text": "Biển này quy định tốc độ tối đa bao nhiêu?",
+    "answers": [
+      {
+        "key": "A",
+        "text": "40 km/h",
+        "correct": false
+      },
+      {
+        "key": "B",
+        "text": "50 km/h",
+        "correct": true
+      },
+      {
+        "key": "C",
+        "text": "60 km/h",
+        "correct": false
+      },
+      {
+        "key": "D",
+        "text": "70 km/h",
+        "correct": false
+      }
+    ],
+    "liet": false,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Vietnam%20road%20sign%20P127-50.svg",
+    "chapter": "Tốc độ",
+    "hang": [
+      "ALL",
+      "A1",
+      "A2",
+      "B1B2"
+    ],
+    "explain": "P.127(50) – Hạn chế tốc độ tối đa 50 km/h.",
+    "source": "Wikimedia Commons – Vietnam road sign P127-50.svg"
+  },
+  {
+    "id": 104,
+    "text": "Biển sau đây có ý nghĩa gì?",
+    "answers": [
+      {
+        "key": "A",
+        "text": "Cấm mọi phương tiện quay đầu",
+        "correct": false
+      },
+      {
+        "key": "B",
+        "text": "Cấm ô tô quay đầu",
+        "correct": true
+      },
+      {
+        "key": "C",
+        "text": "Cấm rẽ trái",
+        "correct": false
+      },
+      {
+        "key": "D",
+        "text": "Cấm ô tô rẽ phải",
+        "correct": false
+      }
+    ],
+    "liet": false,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Vietnam%20road%20sign%20P124b1.svg",
+    "chapter": "Biển báo cấm",
+    "hang": [
+      "ALL",
+      "A1",
+      "A2",
+      "B1B2"
+    ],
+    "explain": "P.124b(1) – Cấm ô tô quay đầu; không áp dụng cho xe máy.",
+    "source": "Wikimedia Commons – Vietnam road sign P124b1.svg"
+  },
+  {
+    "id": 105,
+    "text": "Gặp biển này người lái xe phải làm gì?",
+    "answers": [
+      {
+        "key": "A",
+        "text": "Đi chậm qua",
+        "correct": false
+      },
+      {
+        "key": "B",
+        "text": "Dừng lại trước vạch dừng, nhường cho xe trên đường ưu tiên/đường chính",
+        "correct": true
+      },
+      {
+        "key": "C",
+        "text": "Chỉ dừng khi có công an",
+        "correct": false
+      },
+      {
+        "key": "D",
+        "text": "Bấm còi đi tiếp",
+        "correct": false
+      }
+    ],
+    "liet": true,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Vietnam%20road%20sign%20P122.svg",
+    "chapter": "Hiệu lệnh dừng",
+    "hang": [
+      "ALL",
+      "A1",
+      "A2",
+      "B1B2"
+    ],
+    "explain": "P.122 – Dừng lại (STOP). Phải dừng trước vạch dừng, quan sát và nhường đường theo quy định.",
+    "source": "Wikimedia Commons – Vietnam road sign P122.svg"
+  },
+  {
+    "id": 106,
+    "text": "Biển này cho biết gì về quyền ưu tiên trên tuyến?",
+    "answers": [
+      {
+        "key": "A",
+        "text": "Hết đường ưu tiên",
+        "correct": false
+      },
+      {
+        "key": "B",
+        "text": "Đường ưu tiên (xe trên đường này được ưu tiên tại các giao nhau tiếp theo)",
+        "correct": true
+      },
+      {
+        "key": "C",
+        "text": "Ưu tiên xe ngược chiều",
+        "correct": false
+      },
+      {
+        "key": "D",
+        "text": "Ưu tiên người đi bộ",
+        "correct": false
+      }
+    ],
+    "liet": false,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Vietnam%20road%20sign%20I401.svg",
+    "chapter": "Ưu tiên",
+    "hang": [
+      "ALL",
+      "A1",
+      "A2",
+      "B1B2"
+    ],
+    "explain": "I.401 – Đường ưu tiên; hiệu lực đến nơi đặt biển hết hiệu lực.",
+    "source": "Wikimedia Commons – Vietnam road sign I401.svg"
+  },
+  {
+    "id": 107,
+    "text": "Biển cảnh báo này báo trước tình huống gì?",
+    "answers": [
+      {
+        "key": "A",
+        "text": "Đường trơn trượt",
+        "correct": false
+      },
+      {
+        "key": "B",
+        "text": "Nguy cơ lật xe khi vào cua gấp, nhất là xe tải",
+        "correct": true
+      },
+      {
+        "key": "C",
+        "text": "Đường hẹp về bên trái",
+        "correct": false
+      },
+      {
+        "key": "D",
+        "text": "Gió ngang mạnh",
+        "correct": false
+      }
+    ],
+    "liet": false,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Vietnam%20road%20sign%20W201c.svg",
+    "chapter": "Cảnh báo nguy hiểm",
+    "hang": [
+      "ALL",
+      "A1",
+      "A2",
+      "B1B2"
+    ],
+    "explain": "W.201c – Cảnh báo nguy cơ lật xe khi vào cua gấp.",
+    "source": "Wikimedia Commons – Vietnam road sign W201c.svg"
+  },
+  {
+    "id": 108,
+    "text": "Hình sau mô tả thiết bị ưu tiên nào, bạn phải xử lý ra sao?",
+    "answers": [
+      {
+        "key": "A",
+        "text": "Xe ưu tiên, phải nhường đường ngay",
+        "correct": true
+      },
+      {
+        "key": "B",
+        "text": "Xe thường, không cần nhường",
+        "correct": false
+      },
+      {
+        "key": "C",
+        "text": "Xe dịch vụ, chỉ nhường khi đèn đỏ",
+        "correct": false
+      },
+      {
+        "key": "D",
+        "text": "Không thuộc đối tượng được ưu tiên",
+        "correct": false
+      }
+    ],
+    "liet": true,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Red%20Lights%20and%20Sirens.jpg",
+    "chapter": "Xe ưu tiên",
+    "hang": [
+      "ALL",
+      "A1",
+      "A2",
+      "B1B2"
+    ],
+    "explain": "Xe cứu thương đang phát tín hiệu ưu tiên (đèn, còi) phải được nhường đường theo luật.",
+    "source": "Wikimedia Commons – Red Lights and Sirens.jpg"
+  },
+  {
+    "id": 109,
+    "text": "Biển này báo trước điều gì trên tuyến?",
+    "answers": [
+      {
+        "key": "A",
+        "text": "Nơi giao nhau có tín hiệu đèn",
+        "correct": true
+      },
+      {
+        "key": "B",
+        "text": "Nơi lắp camera phạt nguội",
+        "correct": false
+      },
+      {
+        "key": "C",
+        "text": "Đèn cảnh báo đường sắt",
+        "correct": false
+      },
+      {
+        "key": "D",
+        "text": "Khu vực cấm dừng đỗ",
+        "correct": false
+      }
+    ],
+    "liet": false,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Vietnam%20road%20sign%20W209.svg",
+    "chapter": "Cảnh báo",
+    "hang": [
+      "ALL",
+      "A1",
+      "A2",
+      "B1B2"
+    ],
+    "explain": "W.209 – Cảnh báo phía trước có nút giao điều khiển bằng đèn tín hiệu.",
+    "source": "Wikimedia Commons – Vietnam road sign W209.svg"
+  },
+  {
+    "id": 110,
+    "text": "Biển này có ý nghĩa gì?",
+    "answers": [
+      {
+        "key": "A",
+        "text": "Bến xe buýt",
+        "correct": false
+      },
+      {
+        "key": "B",
+        "text": "Bến taxi",
+        "correct": false
+      },
+      {
+        "key": "C",
+        "text": "Bến xe tải",
+        "correct": true
+      },
+      {
+        "key": "D",
+        "text": "Trạm kiểm tra kỹ thuật",
+        "correct": false
+      }
+    ],
+    "liet": false,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Vietnam%20road%20sign%20I434b.svg",
+    "chapter": "Chỉ dẫn",
+    "hang": [
+      "ALL",
+      "A1",
+      "A2",
+      "B1B2"
+    ],
+    "explain": "I.434b – Bến xe tải.",
+    "source": "Wikimedia Commons – Vietnam road sign I434b.svg"
+  },
+  {
+    "id": 111,
+    "text": "Biển chỉ dẫn này thể hiện gì?",
+    "answers": [
+      {
+        "key": "A",
+        "text": "Bệnh viện/Trạm y tế gần đây",
+        "correct": true
+      },
+      {
+        "key": "B",
+        "text": "Bãi đỗ xe",
+        "correct": false
+      },
+      {
+        "key": "C",
+        "text": "Trạm sửa chữa lốp",
+        "correct": false
+      },
+      {
+        "key": "D",
+        "text": "Trạm xăng dầu",
+        "correct": false
+      }
+    ],
+    "liet": false,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Vietnam%20road%20sign%20I407a.svg",
+    "chapter": "Chỉ dẫn dịch vụ",
+    "hang": [
+      "ALL",
+      "A1",
+      "A2",
+      "B1B2"
+    ],
+    "explain": "I.407a – Bệnh viện (Hospital).",
+    "source": "Wikimedia Commons – Vietnam road sign I407a.svg"
+  },
+  {
+    "id": 112,
+    "text": "Tại nơi giao nhau không có biển báo, đèn tín hiệu, theo quy tắc đường phải nhường đường cho?",
+    "answers": [
+      {
+        "key": "A",
+        "text": "Xe từ bên trái tới",
+        "correct": false
+      },
+      {
+        "key": "B",
+        "text": "Xe từ bên phải tới",
+        "correct": true
+      },
+      {
+        "key": "C",
+        "text": "Xe có kích thước lớn hơn",
+        "correct": false
+      },
+      {
+        "key": "D",
+        "text": "Xe bấm còi xin đường trước",
+        "correct": false
+      }
+    ],
+    "liet": true,
+    "image": "",
+    "chapter": "Quy tắc giao thông",
+    "hang": [
+      "ALL",
+      "A1",
+      "A2",
+      "B1B2"
+    ],
+    "explain": "Theo quy tắc ‘nhường đường cho xe đến từ bên phải’ khi không có báo hiệu ưu tiên.",
+    "source": "Wikipedia – Priority to the right"
+  }
+]
